@@ -1,17 +1,13 @@
 #!/usr/bin/env python3
-
-from typing import Any, Mapping, Union, TypeVar
-
-
-T = TypeVar('T')
-Res = Union[Any, T]
-Def = Union[T, None]
+'''Task 10's module.
+'''
+from typing import Any, Sequence, Union
 
 
-def safely_get_value(dct: Mapping, key: Any, default: Def = None) -> Res:
-    '''Retrieves a value from a dict using a given key.
+def safe_first_element(lst: Sequence[Any]) -> Union[Any, None]:
+    '''Retrieves the first element of a sequence if it exists.
     '''
-    if key in dct:
-        return dct[key]
+    if lst:
+        return lst[0]
     else:
-        return default
+        return None
