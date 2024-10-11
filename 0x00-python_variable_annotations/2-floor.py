@@ -1,6 +1,14 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
+"""
+Basic annotations - floor
+Write type-annotated function floor with float argument
+Returns floor of the float
+"""
 
-"""Floor a float and return the integer value"""
+
 def floor(n: float) -> int:
-    """Floor a float and return the integer value"""
+    """
+    Type-annotated function
+    Floor
+    """
     return int(n)

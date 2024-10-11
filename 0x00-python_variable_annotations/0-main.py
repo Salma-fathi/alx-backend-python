@@ -1,5 +1,14 @@
 #!/usr/bin/env python3
-add = __import__('0-add').add
+"""
+Basic Annotations - concat
+Write type-annotated function concat that takes two strings as argument
+Returns a concatenated string
+"""
 
-print(add(1.11, 2.22) == 1.11 + 2.22)
-print(add.__annotations__)
+
+def concat(str1: str, str2: str) -> str:
+    """
+    Type annotated function
+    Concat
+    """
+    return str1 + str2
