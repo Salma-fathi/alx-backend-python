@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
 This module demonstrates asynchronous operations using asyncio.
-
 It includes functions for generating random delays and running
 concurrent coroutines.
 """
