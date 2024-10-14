@@ -1,22 +1,16 @@
 #!/usr/bin/env python3
-
-"""This module demonstrates asynchronous operations using asyncio."""
+'''Task 2's module.
+'''
 import asyncio
-import random
-from typing import List
+import time
 
 
-async def wait_random(max_delay: int = 10) -> float:
-    """Asynchronous coroutine that waits for a random delay."""
-    delay = random.uniform(0, max_delay)
-    await asyncio.sleep(delay)
-    return delay
+wait_n = __import__('1-concurrent_coroutines').wait_n
 
 
-async def measure_time(n: int, max_delay: int) -> float:
-    """
-    Measure the total execution time for wait_n(n, max_delay) and return it.
-    """
-    start = asyncio.get_event_loop().time()
-    await asyncio.gather(*(wait_random(max_delay) for _ in range(n)))
-    return asyncio.get_event_loop().time() - start
+def measure_time(n: int, max_delay: int) -> float:
+    '''Computes the average runtime of wait_n.
+    '''
+    start_time = time.time()
+    asyncio.run(wait_n(n, max_delay))
+    return (time.time() - start_time) / n
